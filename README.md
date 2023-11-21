@@ -6,7 +6,7 @@
 2. dentro de esa carpeta: `django-admin startproject ProyectoFinal`. Este comando dejará creada una nueva carpeta `ProyectoFinal` con una
 estructura como esta:
 ```bash
-# directorio: ProyectoCoder/ProyectoFinal
+# directorio: PROYECTO_FINAL/ProyectoFinal
 drwxr-xr-x@ 8 marianobarraco  staff   256B Sep  3 09:26 ProyectoFinal  # <--- directorio principal del proyecto (nombre repetido)
 -rw-r--r--@ 1 marianobarraco  staff     0B Sep  3 09:28 db.sqlite3
 -rwxr-xr-x@ 1 marianobarraco  staff   669B Sep  3 09:25 manage.py
@@ -14,7 +14,7 @@ drwxr-xr-x@ 8 marianobarraco  staff   256B Sep  3 09:26 ProyectoFinal  # <--- di
 1. Dentro de la carpeta `ProyectoCoder/ProyectoFinal/ProyectoFinal` vamos a correr el comando `python manage.py startapp AppCoder` lo
 cual nos dejará en este estado
 ```bash
-# directorio: ProyectoCoder/ProyectoFinal
+# directorio: ROYECTO_FINAL/ProyectoFinal
 drwxr-xr-x@ 9 marianobarraco  staff   288B Sep  3 09:31 AppCoder  # <--- nueva carpeta
 drwxr-xr-x@ 8 marianobarraco  staff   256B Sep  3 09:26 ProyectoFinal
 -rw-r--r--@ 1 marianobarraco  staff     0B Sep  3 09:28 db.sqlite3
@@ -24,7 +24,7 @@ drwxr-xr-x@ 8 marianobarraco  staff   256B Sep  3 09:26 ProyectoFinal
 3. Probamos que nuestro servidor web funcione correctamente, para ello vamos a correr el siguiente comando `python manage.py runserver` y comprobaeremos de 2 maneras: (i) observar la respuesta en la consola y (ii)en el browser (por ejemplo _Google Chrome_):
 
 ```bash
-# directorio: ProyectoCoder/ProyectoFinal
+# directorio: ROYECTO_FINAL/ProyectoFinal
 >>  python manage.py runserver
 Watching for file changes with StatReloader
 Performing system checks...
@@ -45,14 +45,14 @@ copiar y pegar en cualquier browser: `http://127.0.0.1:8000/` y comprobar que el
 
 ## Configurar Rutas
 
-**Consejo**: cuando el proceso del servidor está corriendo, los cambios que realicemos en el código se incorporarán automáticamente. A veces esto puede no funcionar, por eso es recomendable apagar y encender el proceso del servidor con: `CRTL + C` y luego `python manage.py runserver` desde el directorio raíz del proyecto `ProyectoCoder/ProyectoFinal`
+**Consejo**: cuando el proceso del servidor está corriendo, los cambios que realicemos en el código se incorporarán automáticamente. A veces esto puede no funcionar, por eso es recomendable apagar y encender el proceso del servidor con: `CRTL + C` y luego `python manage.py runserver` desde el directorio raíz del proyecto `ROYECTO_FINAL/ProyectoFinal`
 
 
-1. Checkear que nuestro proyecto tenga 1 archivo `urls.py` en el directorio `ProyectoCoder/`
+1. Checkear que nuestro proyecto tenga 1 archivo `urls.py` en el directorio `PROYECTO_FINAL/`
 2. Crear un archivo exactamente igual pero en el directorio `AppCoder`
 3. Modificar el nuevo archivo `AppCoder/urls.py` para que contenga una ruta llamada `cursos`
 4. Crear una función para "hacerse cargo" de los pedidos en la ruta `cursos`, la llamaremos `cursos_view`
-5. Registrar las rutas definidas por el archivo `AppCoder/urls.py` en el archivo `urls.py` general del proyecto: `ProyectoCoder/urls.py`
+5. Registrar las rutas definidas por el archivo `AppCoder/urls.py` en el archivo `urls.py` general del proyecto: `PROYECTO_FINAL/urls.py`
 6. Checkear que la ruta funcione entrando a:  `http://127.0.0.1:8000/cursos`
 7. Modificaremos el archivo general `urls.py` para que la ruta
 
@@ -69,7 +69,7 @@ copiar y pegar en cualquier browser: `http://127.0.0.1:8000/` y comprobar que el
 
 ### Funcionamiento básico de templates
 1. Crear un directorio llamado `templates` dentro del directorio `AppCoder`, luego crear otro directorio dentro de `templates` llamado `AppCoder` (sí, se repite)
-2. Crear un archivo `padre.html` en ese directorio: `ProyectoCoder/ProyectoFinal/AppCoder/templates/AppCoder/padre.html` y llenarlo con cualquier contenido
+2. Crear un archivo `padre.html` en ese directorio: `PROYECTO_FINAL/ProyectoFinal/AppCoder/templates/AppCoder/padre.html` y llenarlo con cualquier contenido
 3. Modificaremos la función `cursos_view` (desde ahora la llamaremos **vista**) que _se hace cargo_ de la ruta `AppCoder/cursos` para que entregue el contenido del archivo `padre.html`
 
 **nota**: en el archivo `settings.py` hay una variable del tipo diccionario que se llama `TEMPLATES`. Esta variable contiene un par clave valor: ` "APP_DIRS": True,`
@@ -128,7 +128,7 @@ esta es la manera de informarle a `Django` que queremos que utilice los template
    ```
 
 ### Templates con CSS ("mejorando nuestros templates")
-1. Crear una carpeta llamada `static` en nuestra app: `ProyectoCoder/ProyectoFinal/AppCoder/static`
+1. Crear una carpeta llamada `static` en nuestra app: `PROYECTO_FINAL/ProyectoFinal/AppCoder/static`
 2. Descargarse el archivo `.zip` con contenido estático de: [este link](https://startbootstrap.com/previews/landing-page)
 3. Descomprimir y guardar todo el contenido en la carpeta `static`
 4. Creamos un archivo que se llame `inicio.html` en la carpeta de templates. El contenido de este archivo tiene que ser el mismo que en `index.html` del archivo `.zip` que descomprimimos.
